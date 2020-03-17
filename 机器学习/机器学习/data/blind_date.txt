@@ -1,0 +1,10 @@
+No Age Looks Income CivilServants Meet
+1 30 Normal High No Yes
+2 31 Ugly Low No No
+3 31 Ugly High No Yes
+4 31 Normal High No Yes
+5 31 Normal High Yes Yes
+6 30 Handsome Low No No
+7 31 Handsome High No Yes
+8 31 Handsome Low Yes Yes
+9 30 Handsome Low No Yes

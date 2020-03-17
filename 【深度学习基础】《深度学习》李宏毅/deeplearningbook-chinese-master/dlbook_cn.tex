@@ -1,0 +1,170 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[twoside,nofonts,fancyhdr,openany,UTF8]{ctexbook}
+\usepackage{natbib}
+
+% CJK related
+\setCJKmainfont[AutoFakeBold=true]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\CTEXsetup[format={\raggedright}]{chapter}
+\CTEXsetup[format={\Large\bfseries}]{section}
+\CTEXsetup[format={\large\bfseries}]{subsection}
+\CTEXsetup[format={\normalsize\bfseries}]{subsubsection}
+
+% Needed for some foreign characters
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{booktabs}
+% This allows us to cite chapters by name, which was useful for making the
+% acknowledgements page
+\usepackage{nameref}
+\usepackage{breakcites}
+
+\usepackage[tocindentauto]{tocstyle}
+\usetocstyle{standard}
+
+\usepackage{bm}
+\usepackage{float}
+\newcommand{\boldindex}[1]{\textbf{\hyperpage{#1}}}
+\usepackage{makeidx}\makeindex
+% Make bibliography and index appear in table of contents
+\usepackage[nottoc]{tocbibind}
+\usepackage[font=small]{caption}
+
+\usepackage[section]{placeins}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+% Include chapter number in algorithm number
+\renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}}
+\makeatletter
+\renewcommand*{\ALG@name}{算法}
+\makeatother
+
+
+
+\usepackage[pdfpagelabels=true,
+pdffitwindow=false,
+pdfview=FitH,
+pdfstartview=FitH,
+pagebackref=true,
+breaklinks=true,
+colorlinks=false,
+bookmarks=true,
+hidelinks=true,
+bookmarksnumbered=true,
+bookmarksopen=true,
+bookmarksopenlevel=1,
+bookmarksdepth=1,
+plainpages=true]{hyperref}
+\usepackage{bookmark}
+
+\usepackage{zref-abspage}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
+% my page
+\usepackage[vcentering,dvips]{geometry}
+\geometry{papersize={7in,9in},bottom=3pc,top=5pc,left=5pc,right=5pc,bmargin=4.5pc,footskip=18pt,headsep=25pt}
+\setlength\emergencystretch{1.5em}
+
+% my command
+\newcommand{\firstgls}[1]{\textbf{\,\gls{#1}}（\glsdesc{#1}）}
+\newcommand{\firstacr}[1]{\textbf{\,\gls{#1}}（\glssymbol{#1}）}
+\newcommand{\glsacr}[1]{\gls{#1}（\glssymbol{#1}）}
+\newcommand{\firstall}[1]{\textbf{\,\gls{#1}}（\glsdesc{#1}, \glssymbol{#1}）}
+\newcommand{\ENNAME}[1]{\text{#1}}
+\newcommand{\NUMTEXT}[1]{\text{#1}}
+\newcommand{\figref}[1]{图\,\ref{#1}\,}
+\newcommand{\chapref}[1]{第\ref{#1}章}
+\newcommand{\secref}[1]{第\,\ref{#1}\,节}
+\newcommand{\algref}[1]{算法\,\ref{#1}\,}
+\newcommand{\eqnref}[1]{式\,\eqref{#1}\,}
+
+
+% Draft
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkLightness{0.9}
+\usepackage{background}
+\SetBgContents{仅供学习使用，不得用于商业目的。
+\url{https://github.com/exacity/deeplearningbook-chinese}}
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgOpacity{1}
+\SetBgColor{red}
+\SetBgPosition{current page.north}
+\SetBgVshift{-0.5cm}
+
+\newif\ifOpenSource
+\OpenSourcetrue
+
+% http://tex.stackexchange.com/questions/198140/glossaries-and-custom-section-headings-broken  \glsentrytext!
+\usepackage[nomain,acronym,xindy,toc,nopostdot]{glossaries}
+\makeglossaries
+\usepackage[xindy]{imakeidx}
+\makeindex
+
+
+% symbol and 
+\include{math_symbol}
+\include{terminology}
+
+
+
+% title 
+\title{\Huge\textbf{深度学习}}
+\author{}
+\date{\today}
+
+
+\begin{document}
+\frontmatter
+
+\maketitle
+\cleardoublepage
+
+% From en book -B
+\setlength{\parskip}{0.25 \baselineskip}
+% Sean said to make figures 26 picas wide
+\newlength{\figwidth}
+\setlength{\figwidth}{26pc}
+% Spacing between notation sections
+\newlength{\notationgap}
+\setlength{\notationgap}{1pc}
+% From en book -E
+
+
+\tableofcontents
+
+\newpage
+\input{acknowledgments.tex}
+\input{website.tex}
+\input{notation.tex}
+\mainmatter
+
+\input{Chapter1/introduction.tex}
+\input{applied_math_and_machine_learning_basics.tex}
+\input{deep_networks_modern_practices.tex}
+\input{deep_learning_research.tex}
+
+
+\backmatter
+\bookmarksetup{startatroot}
+
+\appendix
+
+\small{
+\bibliography{dlbook_cn}
+\bibliographystyle{natbib}
+\clearpage
+}
+
+\printglossary[title=术语]
+\end{document}

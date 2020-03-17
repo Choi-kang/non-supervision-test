@@ -1,0 +1,12 @@
+cfg/alexnet.cfg
+data/jpg
+-out
+-out
+/home/hbc/data/MMAP1026/.
+/home/hbc/data/MMAP1026/..
+/home/hbc/data/test/..
+/home/hbc/data/test/00002.jpg
+/home/hbc/data/test/000001.txt
+/home/hbc/data/test/00002.txt
+/home/hbc/data/test/000002.txt
+/home/hbc/data/smartcity/dataset1/Cam3/frames002671.jpg

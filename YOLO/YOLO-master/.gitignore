@@ -1,0 +1,28 @@
+*.o
+*.dSYM
+*.csv
+*.out
+*.pyc
+*.weights
+.fuse*
+*.so
+*.a
+
+# ignore darknet but not darknet/
+darknet
+!darknet/
+
+obj/
+
+darknet53.conv.74
+
+darknet/data/SC2018/
+
+# OS Generated #
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+
+*.h5

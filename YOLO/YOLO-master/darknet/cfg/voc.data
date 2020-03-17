@@ -1,0 +1,6 @@
+classes= 20
+train  = /home/hbc/data/VOCdevkit/yolo/train.txt
+valid  = /home/hbc/data/VOCdevkit/yolo/2007_test.txt
+names = data/voc.names
+backup = /home/hbc/data/VOCdevkit/yolo/models
+

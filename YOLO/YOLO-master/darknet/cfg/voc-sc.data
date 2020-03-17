@@ -1,0 +1,6 @@
+classes= 1
+train  = /home/hbc/data/smartcity/SCdevkit/SC2018/2018_train.txt
+valid  = /home/hbc/data/smartcity/SCdevkit/SC2018/2018_test.txt
+names = data/voc-sc.names
+backup = /home/hbc/data/smartcity/models/yolov3
+
